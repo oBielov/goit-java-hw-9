@@ -12,6 +12,10 @@ public class Main {
        UserToJSON userToJson = UserToJSON.of();
 
        userToJson.generateUserJSON("F:\\GoIT\\userList.txt", "F:\\GoIT\\userListJSON.json");
+
+       WordsCounter counter = new WordsCounter();
+
+       counter.countWords("F:\\GoIT\\wordCountText.txt");
     }
 
 }

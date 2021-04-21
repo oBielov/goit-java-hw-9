@@ -38,12 +38,12 @@ public class UserToJSON {
     /**
      * Service method to generate user list from a text file and process it to
      * agreed pattern
-     * @param pathToFile Path to text file with users data
+     * @param path Path to text file with users data
      * @return processed and arranged list of user data
      * @throws IOException
      */
-    private List<String> generateUserList(String pathToFile) throws IOException {
-        List<String> usersList = Files.readAllLines(Paths.get(pathToFile));
+    private List<String> generateUserList(String path) throws IOException {
+        List<String> usersList = Files.readAllLines(Paths.get(path));
         List<String> processedList = new ArrayList<>();
         for(String e : usersList){
             if(e.isBlank()||e.startsWith("name")){
@@ -71,16 +71,16 @@ public class UserToJSON {
 
     /**
      * Main business method to convert txt user data to User objects
-     * and save them as JSON file. Uses {@link #createUser(String, int)) and
-     * {@link #generateUserList(String)}} methods to get correctly arranged data,
+     * and save them as JSON file. Uses {@link #createUser} and
+     * {@link #generateUserList} methods to get correctly arranged data,
      * creates a new List of User objects with setted parameters.
-     * @param pathToFile path to text file with user data
+     * @param path path to text file with user data
      * @param pathForJSON path to JSON file to save
      * @see User
      * @throws IOException
      */
-    public void generateUserJSON(String pathToFile, String pathForJSON) throws IOException {
-        List<String> userDataArray = generateUserList(pathToFile);
+    public void generateUserJSON(String path, String pathForJSON) throws IOException {
+        List<String> userDataArray = generateUserList(path);
         List<User> usersList = new ArrayList<>();
         for (int i = 0; i < userDataArray.size(); i++){
             String s = userDataArray.get(i);
