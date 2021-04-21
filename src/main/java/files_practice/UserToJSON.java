@@ -46,7 +46,7 @@ public class UserToJSON {
         List<String> usersList = Files.readAllLines(Paths.get(path));
         List<String> processedList = new ArrayList<>();
         for(String e : usersList){
-            if(e.isBlank()||e.startsWith("name")){
+            if(e.isBlank() || e.startsWith("name")){
                 continue;
             }
             processedList.add(e);
@@ -88,12 +88,10 @@ public class UserToJSON {
             User u = createUser(a[0], Integer.parseInt(a[1]) );
             usersList.add(u);
         }
-        for (User u : usersList){
-            System.out.println(u);
-        }
 
         try(FileWriter fileWriter = new FileWriter(pathForJSON)){
             gson.toJson(usersList, fileWriter);
+            System.out.println("JSON file generated at: " + pathForJSON);
         } catch (IOException e){
             e.printStackTrace();
         }

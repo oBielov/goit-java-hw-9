@@ -1,10 +1,11 @@
+files_practice/User.java
+ files_practice.User
 files_practice/PhoneNumbersValidator.java
  files_practice.PhoneNumbersValidator
 files_practice/UserToJSON.java
  files_practice.UserToJSON
-files_practice/User.java
- files_practice.User
 files_practice/Main.java
  files_practice.Main
 files_practice/WordsCounter.java
  files_practice.WordsCounter
+ files_practice.WordsCounter$1
