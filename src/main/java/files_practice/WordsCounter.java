@@ -38,6 +38,7 @@ public class WordsCounter {
         Map<String, Integer> map = new HashMap<>();
         String text = fileToString(path);
 
+
         //Build HashMap with occurrences as value
 
         for(String word : text.split("\\W")) {
