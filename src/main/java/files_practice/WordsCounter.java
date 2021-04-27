@@ -56,14 +56,7 @@ public class WordsCounter {
         //Convert hashMap to ArrayList and sort it in descending order
 
         ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<>(map.entrySet());
-        entries.sort(new Comparator<Map.Entry<String, Integer>>() { //Anonymous class to override comparator,
-                                                                    //IDEA says it can be replaced with lambda
-                                                                    //But I don't know how yet :)
-            @Override
-            public int compare(Map.Entry<String, Integer> a, Map.Entry<String, Integer> b) {
-                return a.getValue().compareTo(b.getValue());
-            }
-        });
+        entries.sort((a, b) -> a.getValue().compareTo(b.getValue()));
 
         //Print result
         for(int i = 0; i < map.size(); i++){
