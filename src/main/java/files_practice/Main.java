@@ -9,15 +9,15 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
        PhoneNumbersValidator validator = new PhoneNumbersValidator();
-       validator.validNumbersPrinter("phoneNumbers.txt");
+       validator.validNumbersPrinter("src/main/resources/phoneNumbers.txt");
 
        UserToJSON userToJson = UserToJSON.of();
 
-       userToJson.generateUserJSON("userList.txt", "userListJSON.json");
+       userToJson.generateUserJSON("src/main/resources/userList.txt", "src/main/resources/userListJSON.json");
 
        WordsCounter counter = new WordsCounter();
 
-       counter.countWords("wordCountText.txt");
+       counter.countWords("src/main/resources/wordCountText.txt");
     }
 
 
